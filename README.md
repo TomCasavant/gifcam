@@ -1,3 +1,24 @@
+## Gifcam Revised
+
+## Changes
+- Replaces Twitter (twython) with Mastodon (Mastodon.py)
+- Web App to allow config changes, and a way to view all generated gifs
+- Picamera2 support (supports updated camera modules)
+- (temporarily) removed status led because I stupidly forgot to add it to my camera
+- Config file
+- WIP: BeReal Integration (wating on [this](https://github.com/chemokita13/beReal-api/issues/27))
+
+## Potential Future Changes
+- Improved Gallery view
+- Security/passwords on web app
+- Pixelfed Support (Probably already works with Mastodon.py but untested) also pixelfed Story support
+- Timelapse Mode
+- Security Camera Mode (with homeassistant support?)
+- Disapprove/Approve Mode for posts (e.g. wait for approval on gif before posting to mastodon)
+- Threading to allow taking photos *while* posting to mastodon simultaneously
+- Enable/Disable gifcam mode from web ui
+
+----
 ## Features
 - Creates a GIF at the press of a button and saves it locally
 - Optionally tweet the created GIF
@@ -38,15 +59,16 @@ Here I'm assuming we're starting with a clean install of Raspbian Jessie Lite. I
 ### Install Dependencies
   - Run -- `sudo apt-get update`
   - Run -- `sudo apt-get upgrade`
-  - Install PiCamera -- `sudo apt-get install python-picamera`
+  - Install dependencies (mastodon) -- `pip install -r requirements.txt`
   - Make sure camera interface is enabled with `sudo raspi-config` > Interfacing Options > Camera
   - Install GraphicsMagick -- `sudo apt-get install graphicsmagick`
-  - Install Gitcore -- `sudo apt-get install git-core`
-  - Install GifCam -- `git clone https://github.com/michaelruppe/gifcam.git`
-  - Install pip: `sudo apt-get install python-pip`
-  - Install twython: `sudo pip install twython` -- https://github.com/ryanmcgrath/twython
-  - Create a twitter app at https://apps.twitter.com/ and populate `gifcam.py` with the necessary credentials. If you don't want to tweet your GIFs, don't create the app, and disable the functionality by setting `tweet = False` in `gifcam.py`.
-  - Optional; Install mount USB if you want to use the `gifcamusb.py` script instead (no twitter, good for Pis without wifi. http://www.raspberrypi-spy.co.uk/2014/05/how-to-mount-a-usb-flash-disk-on-the-raspberry-pi/
+  - Install Gitcore -- `sudo apt-get install git-core` (optional, probably already installed)
+  - Install GifCam -- `git clone https://github.com/TomCasavant/gifcam`
+  - Install pip: `sudo apt-get install python-pip` (optional, probably already installed)
+  - Install PiCamera -- `pip install picamera[array]`
+  - Install dependencies (mastodon) -- `pip install -r requirements.txt`
+  - Copy the config.toml.example file -- `cp config.toml.example config.toml` and enable services you want
+  - Optional; Install mount USB if you want to use the `gifcamusb.py` script instead (good for Pis without wifi. http://www.raspberrypi-spy.co.uk/2014/05/how-to-mount-a-usb-flash-disk-on-the-raspberry-pi/
   - To access your GIFs over WiFi, configure the gif directory as a samba shared directory
 
 
