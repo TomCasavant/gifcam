@@ -9,6 +9,12 @@ Example at [@gifcam@tomkahe.com](https://tomkahe.com/@gifcam)
 - Config file
 - WIP: BeReal Integration (wating on [this](https://github.com/chemokita13/beReal-api/issues/27))
 
+## TODO
+- Gallery currently uses /static/gifs/* but gifs are saved to /gifs/
+- Add config varaible for base directory (I'm using /home/tom/ but most people will be using /home/pi)
+- Updated documentation (picamera2 cannot be installed in a virtual environment, requires libcamera)
+- Fix mastodon integration to wait til file is uploaded (right now it just waits 30 seconds and assumes the gif was updated by that point)
+  
 ## Potential Future Changes
 - Improved Gallery view
 - Security/passwords on web app
@@ -18,6 +24,7 @@ Example at [@gifcam@tomkahe.com](https://tomkahe.com/@gifcam)
 - Disapprove/Approve Mode for posts (e.g. wait for approval on gif before posting to mastodon)
 - Threading to allow taking photos *while* posting to mastodon simultaneously
 - Enable/Disable gifcam mode from web ui
+- Improve preview (right now it saves/transcodes videos to an mp4 and then you have to refresh to get most recent clip)
 
 Web App:
 ![image](https://github.com/TomCasavant/gifcam/assets/7014115/08da9bfd-f006-443d-8fac-14d9dabdf081)
