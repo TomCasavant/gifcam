@@ -1,4 +1,5 @@
 ## Gifcam Revised
+Example at [@gifcam@tomkahe.com](https://tomkahe.com/@gifcam)
 
 ## Changes
 - Replaces Twitter (twython) with Mastodon (Mastodon.py)
@@ -17,6 +18,9 @@
 - Disapprove/Approve Mode for posts (e.g. wait for approval on gif before posting to mastodon)
 - Threading to allow taking photos *while* posting to mastodon simultaneously
 - Enable/Disable gifcam mode from web ui
+
+Web App:
+![image](https://github.com/TomCasavant/gifcam/assets/7014115/08da9bfd-f006-443d-8fac-14d9dabdf081)
 
 ----
 ## Features
